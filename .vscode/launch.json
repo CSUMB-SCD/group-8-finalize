@@ -1,0 +1,59 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ProductServiceApplication",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "edu.csumb.cst438.productservice.ProductServiceApplication",
+            "args": "",
+            "projectName": "ProductService"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ProductServiceApplication",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "edu.csumb.cst438.productservice.ProductServiceApplication",
+            "args": "",
+            "projectName": "ProjectService"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ProductdbApplication",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "edu.csumb.cst438.productservice.api.ProductdbApplication",
+            "args": "",
+            "projectName": "ProjectService"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ItemServiceApplication",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "edu.csumb.cst438.itemservice.ItemServiceApplication",
+            "args": "",
+            "projectName": "ProjectService"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ProjectServiceApplication",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "edu.csumb.cst438.itemservice.ProjectServiceApplication",
+            "args": "",
+            "projectName": "ProjectService"
+        }
+    ]
+}

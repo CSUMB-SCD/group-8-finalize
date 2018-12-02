@@ -1,0 +1,30 @@
+{
+    "run": {
+        "default": "",
+        "items": [
+            {
+                "name": "ProjectService",
+                "projectName": "ProjectService",
+                "workingDirectory": "c:\\Users\\alexa\\Documents\\projBackend\\ProjectService",
+                "args": [],
+                "vmargs": [],
+                "env": {},
+                "preLaunchTask": ""
+            }
+        ]
+    },
+    "debug": {
+        "default": "",
+        "items": [
+            {
+                "name": "ProjectService",
+                "projectName": "ProjectService",
+                "workingDirectory": "c:\\Users\\alexa\\Documents\\projBackend\\ProjectService",
+                "args": [],
+                "vmargs": [],
+                "env": {},
+                "preLaunchTask": ""
+            }
+        ]
+    }
+}
