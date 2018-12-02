@@ -7,6 +7,17 @@
             "cwd": "${workspaceFolder}",
             "console": "internalConsole",
             "stopOnEntry": false,
+            "mainClass": "edu.csumb.cst438.finalizeservice.ProductServiceApplication",
+            "args": "",
+            "projectName": "ProductService"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ProductServiceApplication",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
             "mainClass": "edu.csumb.cst438.productservice.ProductServiceApplication",
             "args": "",
             "projectName": "ProductService"

@@ -32,7 +32,8 @@ public class ProductController {
         public List<Integer> amounts;
     }
 
-    @RequestMapping(value="/process", method = RequestMethod.GET)
+    @CrossOrigin
+    @RequestMapping(value="/process", method = RequestMethod.POST)
     public List<String> process(@RequestBody Payload payload) throws Exception {
         // TODO: this is very naive assuming the data is correct; in a perfect would we would confirm this info
         ArrayList<String> errors = new ArrayList<String>();
@@ -60,6 +61,14 @@ public class ProductController {
             // set stock
         } 
         return errors;
+    }
+    @CrossOrigin
+    @RequestMapping(value="/test", method = RequestMethod.POST)
+    public List<String> test(@RequestBody String payload) throws Exception {
+        System.out.print("string");
+        ArrayList<String> result = new ArrayList<String>();
+        result.add(payload + "123");
+        return result;
     }
 
     @GetMapping("/")
