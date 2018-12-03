@@ -26,41 +26,11 @@ public class ProductController {
     @Autowired
     Manager manager;
 
-    static class Payload{
-        public User user;
-        public List<Product> products;
-        public List<Integer> amounts;
-    }
-
     @CrossOrigin
     @RequestMapping(value="/process", method = RequestMethod.POST)
-    public List<String> process(@RequestBody Payload payload) throws Exception {
-        // TODO: this is very naive assuming the data is correct; in a perfect would we would confirm this info
-        ArrayList<String> errors = new ArrayList<String>();
-        double credits = payload.user.credits;
-
-        if (payload.products.size() != payload.amounts.size()){
-            throw new Exception();
-        }
-        double total = 0;
-        boolean InsufficientStock = false;
-        for (int i = 0; i < payload.products.size(); i++){
-            total += payload.products.get(i).price * payload.amounts.get(i);
-            if (payload.products.get(i).stock < payload.amounts.get(i)){
-                InsufficientStock = true;
-            }
-        }
-        if (InsufficientStock){
-            errors.add("Insufficient Stock");
-        }
-        if (total > credits){
-            errors.add("Insufficient Funds");
-        }
-        if (errors.size() == 0){
-            // set credits
-            // set stock
-        } 
-        return errors;
+    public List<String> confirmPurchase(@RequestBody Payload payload) throws Exception {
+        return manager.confirmPurchase(payload);
+        
     }
     @CrossOrigin
     @RequestMapping(value="/test", method = RequestMethod.POST)
