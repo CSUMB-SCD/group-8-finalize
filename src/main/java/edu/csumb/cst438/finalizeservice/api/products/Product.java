@@ -14,6 +14,7 @@ public class Product {
     public Catagory catagory;
     public Manufacturer manufacturer;
     public String lo_rez;
+    public int quantity;
 
     public Product() {}
 

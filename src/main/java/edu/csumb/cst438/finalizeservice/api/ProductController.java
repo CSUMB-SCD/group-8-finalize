@@ -32,6 +32,7 @@ public class ProductController {
         return manager.confirmPurchase(payload);
         
     }
+    
     @CrossOrigin
     @RequestMapping(value="/test", method = RequestMethod.POST)
     public List<String> test(@RequestBody String payload) throws Exception {

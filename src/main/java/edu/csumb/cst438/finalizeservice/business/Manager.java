@@ -20,14 +20,11 @@ public class Manager{
         ArrayList<String> errors = new ArrayList<String>();
         double credits = payload.user.credit;
 
-        if (payload.products.size() != payload.amounts.size()){
-            throw new Exception();
-        }
         double total = 0;
         boolean InsufficientStock = false;
-        for (int i = 0; i < payload.products.size(); i++){
-            total += payload.products.get(i).price * payload.amounts.get(i);
-            if (payload.products.get(i).stock < payload.amounts.get(i)){
+        for (Product product : payload.products){
+            total += product.price * product.quantity;
+            if (product.quantity < product.quantity){
                 InsufficientStock = true;
             }
         }
@@ -40,8 +37,8 @@ public class Manager{
         if (errors.size() == 0){
             payload.user.credit -= total;
             productDbClient.setCredits(payload.user);
-            for (int i = 0; i < payload.products.size(); i++){
-                productDbClient.reduceStock(payload.products.get(i), payload.amounts.get(i));
+            for (Product product : payload.products){
+                productDbClient.reduceStock(product, product.quantity);
             }
         }
         return errors;

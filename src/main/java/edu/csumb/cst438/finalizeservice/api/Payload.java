@@ -8,5 +8,4 @@ import edu.csumb.cst438.finalizeservice.api.users.User;
 public class Payload {
     public User user;
     public List<Product> products;
-    public List<Integer> amounts;
 }
