@@ -7,21 +7,21 @@ public class User {
     @Id
     public String id;
 
-    public String name;
+    public String username;
     public String password;
-    public double credits;
+    public double credit;
 
     public User() {}
 
-    public User(String name, String password, double credits) {
-        this.name = name;
+    public User(String username, String password, double credit) {
+        this.username = username;
         this.password = password;
-        this.credits = credits;
+        this.credit = credit;
     }
 
     @Override
     public String toString() {
-        return name;
+        return username;
     }
 
 }

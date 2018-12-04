@@ -18,7 +18,7 @@ public class Manager{
     public List<String> confirmPurchase(Payload payload) throws Exception {
         // TODO: this is very naive assuming the data is correct; in a perfect would we would confirm this info
         ArrayList<String> errors = new ArrayList<String>();
-        double credits = payload.user.credits;
+        double credits = payload.user.credit;
 
         if (payload.products.size() != payload.amounts.size()){
             throw new Exception();
@@ -38,9 +38,12 @@ public class Manager{
             errors.add("Insufficient Funds");
         }
         if (errors.size() == 0){
-            // set credits
-            // set stock
-        } 
+            payload.user.credit -= total;
+            productDbClient.setCredits(payload.user);
+            for (int i = 0; i < payload.products.size(); i++){
+                productDbClient.reduceStock(payload.products.get(i), payload.amounts.get(i));
+            }
+        }
         return errors;
     }
 }

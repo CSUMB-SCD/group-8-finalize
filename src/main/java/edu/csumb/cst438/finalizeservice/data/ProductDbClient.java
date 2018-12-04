@@ -8,7 +8,10 @@ import org.springframework.http.HttpEntity;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.client.RestTemplate;
 
+import edu.csumb.cst438.finalizeservice.api.Payload;
+import edu.csumb.cst438.finalizeservice.api.reduceStockPayload;
 import edu.csumb.cst438.finalizeservice.api.products.Product;
+import edu.csumb.cst438.finalizeservice.api.users.User;
 
 @Repository
 public class ProductDbClient {
@@ -22,26 +25,20 @@ public class ProductDbClient {
         return result;
     }
 
-    public boolean setCredits(String uid) {
-        return false;
-    }
+    public void setCredits(User user) {
+        final String uri = "https://proj-zuul.herokuapp.com/userdb/setCredits/";
 
-    static class reduceStockPayload {
-        public String id;
-        public int amount;
-        reduceStockPayload(String id, int amount){
-            this.id = id;
-            this.amount = amount;
-        }
+        RestTemplate restTemplate = new RestTemplate();
+        
+        restTemplate.postForEntity(uri, user, Object.class);
     }
-    public boolean reduceStock(String pid, int amount) {
+    
+    public void reduceStock(Product product, int amount) {
         final String uri = "https://proj-zuul.herokuapp.com/productdb/removeStock/";
 
         RestTemplate restTemplate = new RestTemplate();
         
-        HttpEntity<reduceStockPayload> request = new HttpEntity<>(new reduceStockPayload(pid, amount));
-        Boolean result = restTemplate.postForEntity(uri, request, Boolean.class).getBody();
-    
-        return result;
+        reduceStockPayload payload = new reduceStockPayload(product, amount);
+        restTemplate.postForEntity(uri, payload, Object.class);
     }
 }

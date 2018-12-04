@@ -35,7 +35,6 @@ public class ProductController {
     @CrossOrigin
     @RequestMapping(value="/test", method = RequestMethod.POST)
     public List<String> test(@RequestBody String payload) throws Exception {
-        System.out.print("string");
         ArrayList<String> result = new ArrayList<String>();
         result.add(payload + "123");
         return result;
