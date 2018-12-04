@@ -28,6 +28,7 @@ public class ProductController {
 
     @CrossOrigin
     @RequestMapping(value="/process", method = RequestMethod.POST)
+    @ResponseBody
     public List<String> confirmPurchase(@RequestBody Payload payload) throws Exception {
         return manager.confirmPurchase(payload);
         
