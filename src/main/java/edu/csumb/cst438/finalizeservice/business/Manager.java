@@ -23,10 +23,10 @@ public class Manager{
         double total = 0;
         boolean InsufficientStock = false;
         for (Product product : payload.products){
-            total += product.price * product.quantity;
-            if (product.quantity < product.quantity){
+            if (product.stock < product.quantity){
                 InsufficientStock = true;
             }
+            total += product.price * product.quantity;
         }
         if (InsufficientStock){
             errors.add("Insufficient Stock");
